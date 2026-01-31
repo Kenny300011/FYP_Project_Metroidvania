@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://d224v0twb1yqa"]
+
+[ext_resource type="Script" uid="uid://dn6c0gji6ubje" path="res://Scripts/proto_capsule.gd" id="1_nsf3l"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cjvb5"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_be868"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_n4pv4"]
+radius = 0.3
+
+[node name="proto_capsule" type="CharacterBody3D" groups=["player"]]
+script = ExtResource("1_nsf3l")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_cjvb5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_be868")
+
+[node name="SprintArmPivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0425834, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="SprintArmPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0425834, 0)
+top_level = true
+shape = SubResource("SphereShape3D_n4pv4")
+spring_length = 3.0
+
+[node name="SpringPosition" type="Node3D" parent="SprintArmPivot/SpringArm3D"]
+
+[node name="Camera3D" type="Camera3D" parent="SprintArmPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 3.07445)

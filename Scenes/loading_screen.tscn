@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccg5qdswgp52w"]
+
+[ext_resource type="Script" uid="uid://cix4vvhpgw7yv" path="res://Scripts/loading_screen.gd" id="1_oobaa"]
+
+[node name="Loading Screen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+script = ExtResource("1_oobaa")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 794.0
+offset_top = 448.0
+offset_right = 834.0
+offset_bottom = 471.0
+scale = Vector2(9.8, 9.8)
+text = "0%"

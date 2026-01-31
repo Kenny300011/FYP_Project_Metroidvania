@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcnvhgo5ke8ki"]
+
+[ext_resource type="Texture2D" uid="uid://c88j3oj0lf6om" path="res://assets/textures/rock023_alb_ht.png" id="1_txel2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b7b5e"]
+albedo_texture = ExtResource("1_txel2")
+albedo_texture_force_srgb = true
+normal_enabled = true
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_ojlx4"]
+material = SubResource("StandardMaterial3D_b7b5e")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_txel2"]
+
+[node name="Platform_road" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-5.51835e-06, 0, 55.3875, 0, 1, 0, -126.245, 0, -2.42106e-06, 0, 0, 0)
+mesh = SubResource("BoxMesh_ojlx4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-5.50628e-06, 0, 55.2882, 0, 1, 0, -125.969, 0, -2.41672e-06, 0, 0, 0)
+shape = SubResource("BoxShape3D_txel2")

@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://2hvmwet7jf82"]
+
+[ext_resource type="Script" uid="uid://cc3srpr3vv8wp" path="res://Scripts/level_generator.gd" id="1_q7b6x"]
+[ext_resource type="PackedScene" uid="uid://dcnvhgo5ke8ki" path="res://Scenes/platform_road.tscn" id="2_ciddx"]
+[ext_resource type="PackedScene" uid="uid://dwspontnu48kw" path="res://Scenes/platform_wall.tscn" id="3_5lsef"]
+[ext_resource type="PackedScene" uid="uid://cwb1b0u1yn5mm" path="res://Scenes/platform_hazard.tscn" id="4_ibufi"]
+
+[node name="LevelGenerator" type="Node3D"]
+script = ExtResource("1_q7b6x")
+platform_scenes = Array[PackedScene]([ExtResource("2_ciddx"), ExtResource("3_5lsef"), ExtResource("4_ibufi")])
+
+[node name="seed" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 36
+text = "SEED: "

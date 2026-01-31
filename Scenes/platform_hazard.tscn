@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwb1b0u1yn5mm"]
+
+[ext_resource type="Script" uid="uid://p4iva2wdgr71" path="res://Scripts/platform_hazard.gd" id="1_r22lg"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_sf120"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r22lg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sf120"]
+
+[node name="Platform_hazard" type="StaticBody3D"]
+script = ExtResource("1_r22lg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(372.815, 0, 0, 0, 8.574, 0, 0, 0, 151.31, 0, 0, 0)
+mesh = SubResource("BoxMesh_sf120")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(372, 0, 0, 0, 1, 0, 0, 0, 108, 0, 0, 0)
+shape = SubResource("BoxShape3D_r22lg")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(367.076, 0, 0, 0, 4.27866, 0, 0, 0, 219.479, 0, 8.24964, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_sf120")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
